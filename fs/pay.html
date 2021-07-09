@@ -1,0 +1,103 @@
+<form id="form">
+    <!-- masked iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-card">Card</label>
+      <div id="cc-card" data-cc-card></div>
+    </div>
+  
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-name">Name</label>
+      <div id="cc-name" data-cc-name></div>
+    </div>
+  
+    <!-- iframe value will be sent to webhook parsed into month and year-->
+    <div>
+      <label for="first-data-payment-field-exp">Exp</label>
+      <div id="cc-exp" data-cc-exp></div>
+    </div>
+  
+    <!-- required only if using cvv in config -->
+    <!-- iframe value will not be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-cvv">CVV</label>
+      <div id="cc-cvv" data-cc-cvv></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-address1">Address1</label>
+      <div id="cc-address1" data-cc-address1></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-address2">Address2</label>
+      <div id="cc-address2" data-cc-address2></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-city">City</label>
+      <div id="cc-city" data-cc-city></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-region">State or Province</label>
+      <div id="cc-region" data-cc-region></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-country">Country</label>
+      <div id="cc-country" data-cc-country></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-postalCode">Postal Code</label>
+      <div id="cc-postalCode" data-cc-postalCode></div>
+    </div>
+  
+    <!-- completely optional -->
+    <!-- iframe value will be sent to webhook -->
+    <div>
+      <label for="first-data-payment-field-company">Company</label>
+      <div id="cc-company" data-cc-company></div>
+    </div>
+  
+    <button id="submit">Submit</button>
+  </form>
+
+  <script>
+  const onSubmit = (resolve, reject) => {
+    try {
+      paymentForm.validate(
+        () => {
+          paymentForm.authenticate(
+            (auth) => {
+              paymentForm.submit(auth, resolve, reject);
+            },
+  
+            reject,
+          );
+        },
+  
+        reject,
+      );
+    } catch (error) {
+      if (reject) {
+        reject(error);
+      } else {
+        throw error;
+      }
+    }
+  };
+</script>

@@ -1,0 +1,43 @@
+{
+    "method": "post",
+    "url": "https://prod.api.firstdata.com/ipp/payments-gateway/v2/payments",
+    "headers": {
+      "Content-Type": "application/json",
+      "Client-Request-Id": "",
+      "Api-Key": "",
+      "Timestamp": "",
+      "Message-Signature": ""
+    },
+    "body": {
+      "requestType": "PaymentCardSaleTransaction",
+      "transactionAmount": {
+        "total": "12.04",
+        "currency": "USD"
+      },
+      "paymentMethod": {
+        "paymentCard": {
+          "number": "5424180279791732",
+          "securityCode": "977",
+          "expiryDate": {
+            "month": "12",
+            "year": "24"
+          }
+        },
+        "billing": {
+            "name": "Alec Leamas",
+            "customerId": "1234567890",
+            "contact": {
+              "phone": "07777777777",
+              "email": "alecleamas@tswciftc.com"
+            },
+            "address": {
+              "address1": "Bernauer Strasse 111",
+              "city": "Berlin",
+              "postalCode": "13355",
+              "country": "Germany"
+            }
+          }
+      }
+    }
+  }
+  

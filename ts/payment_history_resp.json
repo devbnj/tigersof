@@ -1,0 +1,18 @@
+{
+    "paymentHistory":
+    [
+        {
+            "amount": "xyz",
+            "value": "string",
+            "currency": "string",
+            "confirmationNumber": "string",
+            "entryDate": "string",
+            "accountType": "string",
+            "bankName": "string",
+            "paymentDate": "string",
+            "paymentStatus": "string",
+            "payorAccountTitle": "string",
+            "paymentType": "string"
+        }
+    ]
+}

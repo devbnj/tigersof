@@ -1,0 +1,15 @@
+{
+    "transactionAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    },
+    "requestType": "PaymentTokenCreditTransaction",
+    "paymentMethod": {
+      "paymentToken": {
+        "value": "1235325235236",
+        "function": "DEBIT",
+        "securityCode": "977"
+      }
+    }
+  }
+  

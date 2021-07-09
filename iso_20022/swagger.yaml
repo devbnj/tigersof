@@ -1,0 +1,167 @@
+swagger: '2.0'
+info:
+  description: |
+    Servicios que permiten la recepción y consulta de la mensajería ISO 20022 frente a BaNCS -CSD. 
+  version: 1.0.0
+  title: Servicios Web Mensajería ISO20022 - Produce and EnquireMessage
+  contact:
+    url: 'https://proyectos.bvc.com.co/amaru/'
+host: bvc.amaru.com.co
+basePath: /v1
+schemes:
+  - https
+paths:
+  /produceMessage:
+    post:
+      tags:
+        - produceMessage
+      summary: Genera mensaje para BaNCS
+      description: |
+        Envía un mensaje ISO20022 xml en formato binario codificado en base 64.
+      operationId: produceMessage
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          description: |
+            Contiene el formato de la petición REST, en este caso es
+            application/json.
+          required: true
+          type: string
+        - name: Authorization
+          in: header
+          description: |
+            Contiene el JWT generado por el endpoint Signin.
+          required: true
+          type: string
+        - name: message
+          in: body
+          description: |
+            Contiene como el mensaje ISO en formato binario
+            codificado en base 64.
+          required: true
+          schema:
+            $ref: '#/definitions/resquestProduceMessage'
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/responseOKProduce'
+          description: Contiene la respuesta de la petición
+        '400':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Bad Request
+        '401':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Unauthorized
+        '403':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Forbidden
+        '500':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Internal Server Error
+  /enquireMessage:
+    post:
+      tags:
+        - enquireMessage
+      summary: |
+        Obtiene mensajes generados por BaNCS. 
+      description: |
+        Servicio Rest para consumir los mensajes ISO 20022 enviados por
+        BaNCS
+      operationId: enquireMessage
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          description: |
+            Contiene el formato de la petición REST, para esta petición es
+            application/json.
+          required: true
+          type: string
+        - name: Authorization
+          in: header
+          description: |
+            Contiene el JWT generado por el endpoint Signin.
+          required: true
+          type: string
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/responseOKGetMessage'
+          description: |
+            Contiene como respuesta los mensajes ISO en formato binario
+            codificado en base 64.
+        '400':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Bad Request
+        '401':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Unauthorized
+        '403':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Forbidden
+        '500':
+          schema:
+            $ref: '#/definitions/responseError'
+          description: Internal Server Error          
+definitions:
+  resquestProduceMessage:
+    type: object
+    properties:
+      msgType:
+        type: string
+        format: String
+        example: "sese.024"
+        description: |
+          Contiene la información del nombre del formato iso que se esta
+          enviando.
+      msg:
+        type: string
+        format: String
+        description: |
+          Contiene la información de mensaje ISO20022 xml en binario base 64.
+  responseOKProduce:
+    type: object
+    properties:
+      message:
+        type: string
+        format: string
+        description: |
+          Retorna OK cuando el resultado es exitoso.
+  responseOKGetMessage:
+    type: object
+    properties:
+      message:
+        type: string
+        format: string
+        description: |
+          Contiene como respuesta los mensajes ISO en formato binario
+          codificado en base 64.
+  responseError:
+    type: object
+    properties:
+      message:
+        type: string
+        format: string
+        description: |
+          Contiene el mensaje de error resultado de la petición.
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: produceMessage
+  - name: enquireMessage

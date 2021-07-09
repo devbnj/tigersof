@@ -1,0 +1,11 @@
+{
+    "paymentCard": {
+      "number": "5424180279791732",
+      "expiryDate": {
+        "month": "03",
+        "year": "21"
+      },
+      "securityCode": "977"
+    }
+  }
+  

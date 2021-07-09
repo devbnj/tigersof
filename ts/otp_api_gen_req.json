@@ -1,0 +1,38 @@
+{
+    "referenceNumber": "13d2d8d2-4913-48a4-8db8-0b91e5e75531",
+    "identifiers": {
+        "userId": "tapint3"
+    },
+    "notificationDeliveryRequest": {
+        "eventId": "ONE_TIME_PASSCODE",
+        "preferences": {
+            "emails": [
+                "raesmith@tsys.com"
+            ],
+            "notificationTypes": [
+                "EMAIL"
+            ],
+            "locale": "en_US"
+        },
+        "identifiers": {
+            "accountId": "000000",
+            "clientId": "T2220",
+            "customerId": "0000",
+            "products": {
+                "cpc": "AAA"
+            }
+        },
+        "alertDetails": {
+            "countryCode": "US",
+            "currency": "USD",
+            "customerName": "Centre03 Tester",
+            "cardLast4": "1655",
+            "productName": "PRODUCT_NAME"
+        }
+    },
+    "actionCode": "LOGIN",
+    "deviceIdentifiers": {
+        "sessionId": "deviceId",
+        "deviceId": "deviceId"
+    }
+}

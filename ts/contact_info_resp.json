@@ -1,0 +1,37 @@
+{
+    "phone": [
+        {
+            "carrier": "SPRINT",
+            "phoneNumber": "4701231234",
+            "contactId": "1",
+            "countryCode": "MLT",
+            "status": "NOT_VERIFIED"
+        },
+        {
+            "carrier": "Verizon",
+            "phoneNumber": "9874561239",
+            "contactId": "3",
+            "countryCode": "CPV",
+            "status": "VERIFIED"
+        },
+        {
+            "carrier": "Sprint",
+            "phoneNumber": "8765211233",
+            "contactId": "4",
+            "countryCode": "KEN",
+            "status": "VERIFIED"
+        }
+    ],
+    "alertPreference": {
+        "timeZone": "GMT_MINUS_5",
+        "language": "ENU",
+        "status": "ACTIVE"
+    },
+    "email": [
+        {
+            "contactId": "2",
+            "email": "TEST001@GMAIL.COM",
+            "status": "VERIFIED"
+        }
+    ]
+}

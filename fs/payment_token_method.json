@@ -1,0 +1,7 @@
+{
+    "paymentToken": {
+      "value": "1235325235236",
+      "function": "DEBIT",
+      "securityCode": "977"
+    }
+  }

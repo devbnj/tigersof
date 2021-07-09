@@ -1,0 +1,14 @@
+{
+    "authCode": "ab68d90c832f10046896691e36ca9e510ca8315efe5919ec307acb54f33a92c6",
+    "referenceNumber": "13d2d8d2-4913-48a4-8db8-0b91e5e75531",
+    "identifiers": {
+        "userId": "00000018209"
+    },
+    "transDateTime": "2019-06-17T13:18:23Z",
+    "actionCode": "LOGIN",
+    "deviceIdentifiers": {
+        "sessionId": "9474e095-8fb4-47ac-ac28-1c5ee4476a64",
+        "deviceId": "deviceId"
+    },
+    "responseCode": "PASS"
+}

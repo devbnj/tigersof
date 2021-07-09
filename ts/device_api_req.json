@@ -1,0 +1,15 @@
+{
+    "referenceNumber": "4000011112222345",
+    "identifiers": {
+        "accountId": "68367342678",
+        "customerId": "787847389789",
+        "userId": "neutrinots2c503",
+        "cardNumber": "4869"
+    },
+    "credentialDetail": {
+        "knowledgeCredential": "true",
+        "inherenceCredential": "false",
+        "possessionCredential": "false",
+        "sourceApplication": "BIDV"
+    }
+}

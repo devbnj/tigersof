@@ -1,0 +1,22 @@
+{
+    "identifiers": {
+        "userId": "00000018209"
+    },
+    "personalInformation": {
+        "firstName": "Tsys",
+        "lastName": "Tester",
+        "emailAddress": "raesmith@tsys.com"
+    },
+    "actionCode": "LOGIN",
+    "credentialDetail": {
+        "knowledgeCredential": "true",
+        "inherenceCredential": "false",
+        "possessionCredential": "false",
+        "sourceApplication": "CENTRESUITEMOBILE"
+    },
+    "deviceIdentifiers": {
+        "sessionId": "9474e095-8fb4-47ac-ac28-1c5ee4476a64",
+        "deviceId": "deviceId"
+    },
+    "returnDetails": "false"
+}
